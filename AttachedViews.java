@@ -1,3 +1,8 @@
+/*
+    (c) xdrop - 2015
+    For license information see LICENSE
+*/
+    
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
