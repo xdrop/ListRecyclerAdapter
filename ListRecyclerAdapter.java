@@ -29,6 +29,10 @@ public abstract class ListRecyclerAdapter<T,E extends ListRecyclerAdapter.ViewHo
         return mDataSet.size();
     }
 
+    public T getItem(int index){
+        return mDataSet.get(index);
+    }
+
     public void setItemClickListener(ItemClickListener<T> itemClickListener){
         this.itemClickListener = itemClickListener;
     }
@@ -57,24 +61,26 @@ public abstract class ListRecyclerAdapter<T,E extends ListRecyclerAdapter.ViewHo
 
     public interface ItemClickListener<T> {
 
-    /**
-     * Called when an item is clicked
-     * @param item An instance of the item clicked data source
-     * @param position Position of item in the adapter
-     * @param clickedView The clicked view
-     * @param attachedViews Any attached views that might need to be updated
-     */
-    void onItemClick(T item, int position, View clickedView,AttachedViews attachedViews);
+        /**
+         * Called when an item is clicked
+         * @param item An instance of the item clicked data source
+         * @param position Position of item in the adapter
+         * @param clickedView The clicked view
+         * @param attachedViews Any attached views that might need to be updated
+         */
+        void onItemClick(T item, int position, View clickedView,AttachedViews attachedViews);
 
-    /**
-     * Called when an item is long clicked
-     * @param item An instance of the item clicked data source
-     * @param position Position of item in the adapter
-     * @param clickedView The clicked view
-     * @param attachedViews Any attached views that might need to be updated
-     */
-    void onItemLongClick(T item, int position, View clickedView,AttachedViews attachedViews);
+        /**
+         * Called when an item is long clicked
+         * @param item An instance of the item clicked data source
+         * @param position Position of item in the adapter
+         * @param clickedView The clicked view
+         * @param attachedViews Any attached views that might need to be updated
+         */
+        void onItemLongClick(T item, int position, View clickedView,AttachedViews attachedViews);
 
-	}
+    }
+
+
 
 }
